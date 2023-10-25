@@ -1,15 +1,294 @@
 <!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the  Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
 <html lang="en">
 
 <head>
-    <title>Qiyuan's Homepage</title>
+    <title>Qiyuan</title>
     <meta charset="utf-8">
+    <link rel="icon" href="files/logo.png" type="image/icon type">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="./jquery.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <link href="./font.css" rel='stylesheet' type='text/css'>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script src="./fixedScroll.js"></script>
+    <meta name="viewport" content="width=device-width">
 </head>
+<style>
+    :root {
+        --primary-color: #1B6FC2;
+        --secondary-color: #536390;
+        --font-color: #23476A;
+        --bg-color: #FEFDF9;
+        --heading-color: #292922;
+    }
 
+    [data-theme="dark"] {
+        --primary-color: #66CCCC;
+        --secondary-color: #818cab;
+        --font-color: #CCCCCC;
+        --bg-color: #2C2C2C;
+        --heading-color: #818cab;
+    }
+
+    hr {
+        display: block;
+        margin-top: 2.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: .5px;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--font-color);
+    }
+
+    a {
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        color: var(--primary-color);
+    }
+
+    /*Simple css to style it like a toggle switch*/
+    .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+
+        em {
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+    }
+
+
+    .theme-switch {
+        display: inline-block;
+        top: 7px;
+        height: 27px;
+        right: 70px;
+        position: absolute;
+        width: 32px;
+    }
+
+    .theme-switch input {
+        display: none;
+    }
+
+    .slider {
+        background-color: #b3b3b3;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 12px;
+        transition: .4s;
+    }
+
+    .slider:before {
+        background-color: #FEFDF9;
+        top: 0;
+        content: "";
+        height: 15px;
+        left: 0px;
+        position: absolute;
+        transition: .4s;
+        width: 15px;
+    }
+
+    input:checked+.slider {
+        background-color: #66CCCC;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(17px);
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    
+</style>
 
 <body>
-   <h1>Hello, this is Qiyuan!</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#publication">Publication</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="./cv_en.pdf">CV</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox">
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Entries Column -->
+            
+            <!-- bootstrap -->
+            <div class="col-lg-8">
+                <div style="margin-top:1vh; text-align:justify;">
+                    <div style="text-align:left;">
+                        <div id="Aboutme" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;"><b>About me</b></div>
+                        <br>
+                        <p>I am currently a research assistant in the IxD Lab of the School of Design at Shanghai Jiao Tong University at Shanghai Jiao Tong University. I graduated from the University of Waterloo with a Bachelor of Science degree Major in Mathematical Physics and Minor in Biophysics in 2021, and I have spent 2 years in the healthcare industry at Shanghai.
+                        </p>
+                        <p>My research interests include bioinformatics, biomedical science, and cancer biology. Specifically, I am devoted to the research of utilizing AI techniques to improve biomedical research.</p>
+                        
+                    </div>
+                    <hr>
+                    <div style="margin-top:1vh; text-align:left;">
+                        <div id="news" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;">
+                            <b>What's News</b>
+                        </div>
+                        <br>
+                        <div>
+                            <li><b> <strong>[2023-10]</strong> <span style="color:red">New!!!</span> Our paper "Learning A Foundation Language Model for Geoscience Knowledge Understanding and Utilization" has been accepted by WSDM-2024!</b></li>
+                        </div>
+                    </div>
+                    <hr>
+                    <div style="margin-top:1vh; text-align:left;">
+                        <div id="publication" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;">
+                            <b>Publication</b>
+                        </div>
+                        <br>
+                        <div style="font-weight:normal;">
+                            <li><b>[CCF-B]</b> Cheng Deng, Tianhang Zhang, Zhongmou He, <b>Qiyuan Chen</b>, Yi Xu, Yuanyuan Shi, Luoyi Fu, Weinan Zhang, Xinbing Wang, Chenghu Zhou, Zhouhan Lin and Junxian He, "Learning A Foundation Language Model for Geoscience Knowledge Understanding and Utilization" in <i>WSDM</i>, 2024.
+                                <u><a href="https://arxiv.org/abs/2306.05064" target="_blank">[Paper]</a></u>
+                                <u><a href="https://github.com/davendw49/k2" target="_blank">[Code]</a></u>
+                                <u><a href="https://k2.acemap.info" target="_blank">[Demo]</a></u>
+                            </li>
+                            <li><b>[BioRXiv]</b> <b>Qiyuan Chen</b>, Cheng Deng. "Bioinfo-Bench: A Simple Benchmark Framework for LLM Bioinformatics Skills Evaluation", DIO: <a href="https://doi.org/10.1101/2023.10.18.563023" target="_blank">10.1101/2023.10.18.563023</a>.
+                            </li>
+                        </div>
+                    </div>
+                    <hr>
+                    <div style="margin-top:1vh; text-align:left;">
+                        <div id="project" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;">
+                            <b>Projects</b>
+                        </div>
+                        <br>
+                        <div style="font-weight: normal;">
+                            <li><b>[MedAide]</b> Gained deep insights into the nuances and specificities of bioinformatics, delving into the evolving roles played by AI within the discipline by conducting comprehensive literature reviews.
+                            </li>
+                            <li><b>K2: The first geoscience Large Language Model</b>, sharing by Prof. Cleverley <a href="https://github.com/davendw49/k2" target="_blank">[Github]</a>.
+                                <div style="text-align:center;">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7093001270646444032" width="600" height="300" frameborder="0.2" allowfullscreen="" title="Embedded post"></iframe>
+                                </div>
+                            </li>
+                            <li><b>[BioInfo-Bench]</b> Developed an extensive benchmark for large language models in the field of bioinformatics, involving the collection of relevant data, performance analysis of diverse large language models, and the proposal of an innovative evaluation framework tailored to practical applications.
+                            </li>
+                        </div>
+                    </div>
+                    <hr>
+                    <div style="margin-top:1vh; text-align:left;">
+                        <div id="awards" align="justify" , style="font-family: Arial, Helvetica, sans-serif; font-size: 22px;">
+                            <b>Awards</b>
+                        </div>
+                        <br>
+                        <div style="font-weight: normal;">
+                            <li><b>Waterloo president’s scholarship</b>, 2019.</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div id="pi" style="width:100%">
+                    <!-- Contact Info on the Sidebar and image -->
+                    <div id="basicimg">
+                        <b style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;">Qiyuan Chen</b>
+                        <br>
+                        <img class="img-responsive" src="./qy.jpg" height="400" width="400" alt="">
+                    </div>
+                    <div id="basicinfo">
+                    <br>
+                    <p style="font-size: 18px;">
+                        Research Assistant
+                    </p>
+                    <p>
+                        IxD, School of Design<br>
+                        Shanghai Jiao Tong University<br>
+                    </p>
+                    <p><b>Email:</b> <a href="mailto:qiyuan04@sjtu.edu.cn">qiyuan04@sjtu.edu.cn</a><br>
+                        <b>Office:</b> Design Building 408, SJTU<br>
+                    </p>
+                    <dd><a href="https://github.com/cinnnna" target="_blank">GitHub</a></dd>
+                    </p>
+                    
+                    </div>
+                    <br>
+                    <!--Friendship does not experience emotional bankruptcy and the disillusionment of happiness unless it is filled with opportunism and worldliness.-->
+                </div>
+            </div>
+         </div>
+        <div>
+            <p style="font-size:0.8em; float:right; color:#b5bec9;"> Refer to <u> <a style="color:#b5bec9" target="_blank" href="https://mavroud.is/">Vasilios Mavroudis</a></u>'s <u><a style="color:#b5bec9" target="_blank" href="https://github.com/mavroudisv/plain-academic">homepage template</a></u>!</p>
+        </div>
+        <script>
+            // if (document.body.offsetWidth >= 1200) { 
+            //     $("#pi").fixedScroll();
+            // }
+            // else {
+            //     $("#basicimg").css("display","inline-block");
+            //     $("#basicinfo").css("display","inline-block");
+            //     $("#basicinfo").css("margin-left","10%");
+            //     $("#basicinfo").css("vertical-align","top");
+            // }
+            console.log('-1', document.body.offsetWidth)
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            }
+            toggleSwitch.addEventListener('change', switchTheme, false);
+
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark'); //add this
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light'); //add this
+                }
+            }
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                if (currentTheme === 'dark') {
+                    toggleSwitch.checked = true;
+                }
+            }
+        </script>
+        <span id="busuanzi_container_site_pv">
+            Total Visit: 
+        <span id="busuanzi_value_site_pv">
 </body>
 
 </html>
